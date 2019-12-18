@@ -68,8 +68,28 @@ var Juego = {
       desdeY: 0, 
       hastaY: 961,
     }),
-  ],    ///  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    new ZombieConductor('imagenes/tren_horizontal.png', 850, 322, 90, 30, 5, {
+      desdeX: 0, 
+      hastaX: 870, 
+      desdeY: 0, 
+      hastaY: 961}, 
+      'h'),  
+
+    new ZombieConductor('imagenes/tren_vertical.png', 643, 322, 30, 90, 5, {
+      desdeX: 0, 
+      hastaX: 870, 
+      desdeY: 0, 
+      hastaY: 961}, 
+      'v'),  
+
+    new ZombieConductor('imagenes/tren_vertical.png', 675, 100, 30, 90, 5, {
+      desdeX: 0, 
+      hastaX: 870, 
+      desdeY: 0, 
+      hastaY: 961}, 
+      'v'),  
+  ],
 }
 
 /* Se cargan los recursos de las imagenes, para tener un facil acceso
@@ -96,10 +116,8 @@ Juego.iniciarRecursos = function() {
     'imagenes/auto_rojo_izquierda.png',
     'imagenes/auto_verde_abajo.png',
     'imagenes/auto_verde_derecha.png',
-    "imagenes/fuego.png",
     "imagenes/fire.png",
     "imagenes/Salida.png",
-
   ]);
   Resources.onReady(this.comenzar.bind(Juego));
 };
