@@ -5,10 +5,10 @@ var Jugador = {
   */
   sprite: 'imagenes/auto_rojo_abajo.png',
   x: 130,
-  y: 160,
+  y: 50,
   ancho: 15,
   alto: 30,
-  velocidad: 3,
+  velocidad: 5,
   vidas: 10,
 
   // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,

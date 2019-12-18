@@ -33,6 +33,12 @@ var Juego = {
     new Obstaculo("imagenes/fire.png", 790, 130, 40, 30, 1),
     new Obstaculo("imagenes/fire.png", 820, 160, 20, 10, 1),
     new Obstaculo("imagenes/fire.png", 780, 150, 20, 10, 1),
+    new Obstaculo("imagenes/fire.png", 850, 400, 40, 30, 1),
+    new Obstaculo("imagenes/fire.png", 850, 350, 20, 10, 1),
+    new Obstaculo("imagenes/fire.png", 500, 382, 40, 30, 1),
+    new Obstaculo("imagenes/fire.png", 520, 370, 20, 10, 1),
+    new Obstaculo("imagenes/fire.png", 490, 350, 30, 20, 1),
+
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
@@ -265,7 +271,7 @@ Juego.dibujarFondo = function() {
     document.getElementById('reiniciar').style.visibility = 'visible';
   } else {
     Dibujante.dibujarImagen('imagenes/mapa.png', 0, 5, this.anchoCanvas, this.altoCanvas);
-    Dibujante.dibujarImagen("imagenes/Salida.png", 800, 500,50, 50);
+    Dibujante.dibujarImagen("imagenes/Salida.png", 800, 480,50, 80);
   }
 };
 
