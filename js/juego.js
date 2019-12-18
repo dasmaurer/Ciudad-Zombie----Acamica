@@ -24,7 +24,15 @@ var Juego = {
     new Obstaculo("imagenes/valla_vertical.png", 80, 280, 30, 30, 1),
     new Obstaculo("imagenes/bache.png", 200, 400, 30, 30, 1),
     new Obstaculo("imagenes/auto_verde_derecha.png", 250, 480, 30, 15, 1),
-
+    new Obstaculo("imagenes/valla_vertical.png", 380, 200, 30, 30, 1),
+    new Obstaculo("imagenes/valla_horizontal.png", 280, 180, 30, 30, 1),
+    new Obstaculo("imagenes/valla_vertical.png", 380, 120, 30, 30, 1),
+    new Obstaculo("imagenes/valla_vertical.png", 500, 80, 30, 30, 1),
+    new Obstaculo("imagenes/auto_verde_derecha.png", 500, 300, 30, 15, 1),
+    new Obstaculo("imagenes/auto_verde_derecha.png", 750, 130, 30, 15, 1),
+    new Obstaculo("imagenes/fire.png", 790, 130, 40, 30, 1),
+    new Obstaculo("imagenes/fire.png", 820, 160, 20, 10, 1),
+    new Obstaculo("imagenes/fire.png", 780, 150, 20, 10, 1),
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
@@ -81,7 +89,11 @@ Juego.iniciarRecursos = function() {
     'imagenes/auto_rojo_derecha.png',
     'imagenes/auto_rojo_izquierda.png',
     'imagenes/auto_verde_abajo.png',
-    'imagenes/auto_verde_derecha.png'
+    'imagenes/auto_verde_derecha.png',
+    "imagenes/fuego.png",
+    "imagenes/fire.png",
+    "imagenes/Salida.png",
+
   ]);
   Resources.onReady(this.comenzar.bind(Juego));
 };
@@ -215,7 +227,8 @@ Juego.chequearColisiones = function(x, y) {
   this.obstaculos().forEach(function(obstaculo) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
 
-      /*COMPLETAR, obstaculo debe chocar al jugador*/
+      /*COMPLETAR, obstaculo debe chocar al jugador*/////////////////////////////////////////////////////
+      obstaculo.chocar(this.jugador);
 
       puedeMoverse = false
     }
@@ -252,6 +265,7 @@ Juego.dibujarFondo = function() {
     document.getElementById('reiniciar').style.visibility = 'visible';
   } else {
     Dibujante.dibujarImagen('imagenes/mapa.png', 0, 5, this.anchoCanvas, this.altoCanvas);
+    Dibujante.dibujarImagen("imagenes/Salida.png", 800, 500,50, 50);
   }
 };
 
