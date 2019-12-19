@@ -52,6 +52,6 @@ ZombieConductor.prototype.atacar = function(jugador) {
   ...
 }*/
 ZombieCaminante.prototype.atacar = function(jugador) {
-  jugador.perderVidas(2);
+  jugador.perderVidas(1);
 }
   
