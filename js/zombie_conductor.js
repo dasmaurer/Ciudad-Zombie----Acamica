@@ -30,7 +30,7 @@ ZombieConductor.prototype.mover = function() {
  //Esto hasta llegar a sus limites, donde se invierte su direccion vertical
   if (this.direccion == "v") {
     this.y -= this.velocidad;
-  } else {
+  } else if (this.direccion == "h") {
     //Sino, hace otro movimiento en horizontal
     this.x -= this.velocidad;
   }
@@ -43,6 +43,12 @@ ZombieConductor.prototype.mover = function() {
   }
   // Si sobrepasa el rangoY, lo manda al centro entre ambos rangos
   if ((this.y < this.rangoMov.desdeY) || (this.y > this.rangoMov.hastaY)) {
-    this.y = this.rangoMov.desdeY + (this.rangoMov.hastaY - this.rangoMov.desdeY)/2;
-  }
+    this.velocidad *= -1;  }
 }
+
+/*
+
+ZombieConductor.prototype.atacar = function(jugador) {
+  jugador.perderTodasLasVidas();
+}
+*/

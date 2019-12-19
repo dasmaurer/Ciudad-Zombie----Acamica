@@ -13,46 +13,7 @@ var Jugador = {
 
   // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,
   // y todo lo que haga falta para que cumpla con sus responsabilidades
-  moverse : function(x, y, tecla){
-    this.x += x;
-    this.y += y;
-
-  switch (tecla){
-    case "izq":
-      this.sprite = "imagenes/auto_rojo_izquierda.png";
-      this.ancho = 30;
-      this.alto = 15;
-      break;
-    case "arriba":
-      this.sprite = "imagenes/auto_rojo_arriba.png";
-      this.ancho = 15;
-      this.alto = 30;
-      break;
-    case "der":
-      this.sprite = "imagenes/auto_rojo_derecha.png";
-      this.ancho = 30;
-      this.alto = 15;
-      break;
-    case "abajo":
-      this.sprite = "imagenes/auto_rojo_abajo.png";
-      this.ancho = 15;
-      this.alto = 30;
-      break;
-  }
-},
-  perderVidas : function (cantVidas) {
-  this.vidas -= cantVidas;
-  console.log(this);
-  }
-}
-
-// this.perderVidas = function perderVidas(vidas,,,){};*/
-
-
-
-
-
-/*  moverse : function (x, y, tecla) {
+  moverse : function (x, y, tecla) {
     
     this.x += x;
     this.y += y;
@@ -78,4 +39,15 @@ var Jugador = {
       this.alto =15;
     }
   },
-*/
+  
+  perderVidas : function (cantVidas) {
+  this.vidas -= cantVidas;
+  console.log(this);
+  },
+
+
+perderTodasLasVidas: function(){
+    this.vidas = 0;
+  }
+}
+/* this.perderVidas = function perderVidas(vidas,,,){};*/

@@ -62,9 +62,37 @@ var Juego = {
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
 
-    new ZombieCaminante("imagenes/zombie1.png",390, 155, 10, 10, 1,{ 
+    new ZombieCaminante("imagenes/zombie1.png",100, 155, 10, 10, 1,{ 
       desdeX: 0, 
-      hastaX: 577, 
+      hastaX: 961, 
+      desdeY: 0, 
+      hastaY: 961,
+    }),
+
+    new ZombieCaminante("imagenes/zombie2.png",200, 300, 10, 10, 1,{ 
+      desdeX: 0, 
+      hastaX: 961, 
+      desdeY: 0, 
+      hastaY: 961,
+    }),
+
+    new ZombieCaminante("imagenes/zombie3.png",300, 250, 10, 10, 1,{ 
+      desdeX: 0, 
+      hastaX: 961, 
+      desdeY: 0, 
+      hastaY: 961,
+    }),
+
+    new ZombieCaminante("imagenes/zombie4.png",400, 120, 10, 10, 1,{ 
+      desdeX: 0, 
+      hastaX: 961, 
+      desdeY: 0, 
+      hastaY: 961,
+    }),
+
+    new ZombieCaminante("imagenes/zombie1.png",900, 450, 10, 10, 1,{ 
+      desdeX: 0, 
+      hastaX: 900, 
       desdeY: 0, 
       hastaY: 961,
     }),
@@ -76,18 +104,18 @@ var Juego = {
       hastaY: 961}, 
       'h'),  
 
-    new ZombieConductor('imagenes/tren_vertical.png', 643, 322, 30, 90, 5, {
+    new ZombieConductor('imagenes/tren_vertical.png', 643, 0, 30, 90, 5, {
       desdeX: 0, 
-      hastaX: 870, 
-      desdeY: 0, 
-      hastaY: 961}, 
+      hastaX: 961,
+      desdeY: -300,
+      hastaY: 800},
       'v'),  
 
-    new ZombieConductor('imagenes/tren_vertical.png', 675, 100, 30, 90, 5, {
+    new ZombieConductor('imagenes/tren_vertical.png', 675, 200, 30, 90, 5, {
       desdeX: 0, 
-      hastaX: 870, 
-      desdeY: 0, 
-      hastaY: 961}, 
+      hastaX: 961, 
+      desdeY: -250, 
+      hastaY: 1000}, 
       'v'),  
   ],
 }
@@ -195,8 +223,6 @@ Juego.dibujar = function() {
   Dibujante.dibujarEntidad(Jugador);
 
 
- 
-
   // Se recorren los obstaculos de la carretera pintandolos
   this.obstaculosCarretera.forEach(function(obstaculo) {
     Dibujante.dibujarEntidad(obstaculo);
@@ -223,7 +249,16 @@ Juego.dibujar = function() {
 un recorrido por los enemigos para dibujarlos en pantalla ahora habra que hacer
 una funcionalidad similar pero para que se muevan.*/
 Juego.moverEnemigos = function() {
+
   /* COMPLETAR */
+Juego.enemigos.forEach(function(enemigo){
+  enemigo.mover();
+})
+
+
+
+
+
 };
 
 /* Recorre los enemigos para ver cual esta colisionando con el jugador
@@ -251,7 +286,7 @@ Juego.chequearColisiones = function(x, y) {
   this.obstaculos().forEach(function(obstaculo) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
 
-      /*COMPLETAR, obstaculo debe chocar al jugador*/////////////////////////////////////////////////////
+      /*COMPLETAR, obstaculo debe chocar al jugador*/////////////////////////////////////////////////////  OK  ??
       obstaculo.chocar(this.jugador);
 
       puedeMoverse = false
