@@ -250,14 +250,10 @@ un recorrido por los enemigos para dibujarlos en pantalla ahora habra que hacer
 una funcionalidad similar pero para que se muevan.*/
 Juego.moverEnemigos = function() {
 
-  /* COMPLETAR */
+  /* COMPLETAR */////////////////////////////////////////////////////////////////////////////////////////////// OK
 Juego.enemigos.forEach(function(enemigo){
   enemigo.mover();
 })
-
-
-
-
 
 };
 
@@ -269,10 +265,14 @@ Juego.calcularAtaques = function() {
   this.enemigos.forEach(function(enemigo) {
     if (this.intersecan(enemigo, this.jugador, this.jugador.x, this.jugador.y)) {
       /* Si el enemigo colisiona debe empezar su ataque
-      COMPLETAR */
+      COMPLETAR *////////////////////////////////////////////////////////////////////////////////////////////// OK
+
+      enemigo.comenzarAtaque(this.jugador);
+
     } else {
       /* Sino, debe dejar de atacar
-      COMPLETAR */
+      COMPLETAR *////////////////////////////////////////////////////////////////////////////////////////////// OK
+      enemigo.dejarDeAtacar(this.jugador);
     }
   }, this);
 };
@@ -285,15 +285,14 @@ Juego.chequearColisiones = function(x, y) {
   var puedeMoverse = true
   this.obstaculos().forEach(function(obstaculo) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
-
       /*COMPLETAR, obstaculo debe chocar al jugador*/////////////////////////////////////////////////////  OK  ??
       obstaculo.chocar(this.jugador);
-
       puedeMoverse = false
     }
   }, this)
   return puedeMoverse
 };
+
 
 /* Este metodo chequea si los elementos 1 y 2 si cruzan en x e y
  x e y representan la coordenada a la cual se quiere mover el elemento2*/
@@ -311,7 +310,7 @@ Juego.intersecan = function(elemento1, elemento2, x, y) {
     (derecha1 >= izquierda2) && (izquierda1 <= derecha2))
 };
 
-Juego.dibujarFondo = function() {
+Juego.dibujarFondo = function () {
   // Si se termino el juego hay que mostrar el mensaje de game over de fondo
   if (this.terminoJuego()) {
     Dibujante.dibujarImagen('imagenes/mensaje_gameover.png', 0, 5, this.anchoCanvas, this.altoCanvas);
@@ -328,12 +327,12 @@ Juego.dibujarFondo = function() {
   }
 };
 
-Juego.terminoJuego = function() {
+Juego.terminoJuego = function () {
   return this.jugador.vidas <= 0;
 };
 
 /* Se gana el juego si se sobre pasa cierto altura y */
-Juego.ganoJuego = function() {
+Juego.ganoJuego = function () {
   return (this.jugador.y + this.jugador.alto) > 530;
 };
 

@@ -45,9 +45,8 @@ var Jugador = {
   console.log(this);
   },
 
-
-perderTodasLasVidas: function(){
+  perderTodasLasVidas: function(){
     this.vidas = 0;
   }
 }
-/* this.perderVidas = function perderVidas(vidas,,,){};*/
+
